@@ -19,7 +19,7 @@ app.get('/',(req,res) =>{
 //* Rutas prara El Tour
 app.use('/api',router)
 
-//* Rutas pra El User
+//* Rutas para El User
 
 //* Rutas para el Booking
 

@@ -10,6 +10,60 @@ const tourModel = {
         } catch (error) {
             console.error(error)
         }
+    },
+
+    async createTourModel(newTour){
+        //* 1.- CONEXION A BDD
+        const url = "http://localhost:4000/tours"
+        //* 2.- ENVIAR DATA A LA BDD
+        const peticion = await fetch(url, {
+            method: 'POST',
+            body:JSON.stringify(newTour),
+            headers: {"Content-Type":"application/json"}
+        })
+        //* 3.- OBTENER RESPUESTA A LA BDD
+        const data = await peticion.json()
+        //* 4.- MANDAR RESPUESTA AL CONTROLADOR
+        return data
+    },
+
+    async updateTourModel(tourId,updatedTour){
+        //* 1.- CONEXION A BDD
+        const url = `http://localhost:4000/tours/${tourId}`
+        //* 2.- ENVIAR DATA A LA BDD
+        const peticion = await fetch(url, {
+            method: 'PUT',
+            body:JSON.stringify(updatedTour),
+            headers: {"Content-Type":"application/json"}
+        })
+        //* 3.- OBTENER RESPUESTA A LA BDD
+        const data = await peticion.json()
+        //* 4.- MANDAR RESPUESTA AL CONTROLADOR
+        return data
+    },
+
+    async deleteTourModel(tourId){
+        //* 1.- CONEXION A BDD
+        const url = `http://localhost:4000/tours/${tourId}`
+        //* 2.- ENVIAR DATA A LA BDD
+        const peticion = await fetch(url, {
+            method: 'DELETE',
+            })
+        //* 3.- OBTENER RESPUESTA A LA BDD
+        const data = await peticion.json()
+        //* 4.- MANDAR RESPUESTA AL CONTROLADOR
+        return data
+    },
+
+    async findTourModel(tourId){
+        //* 1.- CONEXION A BDD
+        const url = `http://localhost:4000/tours/${tourId}`
+        //* 2.- ENVIAR DATA A LA BDD
+        const peticion = await fetch(url)
+        //* 3.- OBTENER RESPUESTA A LA BDD
+        const data = await peticion.json()
+        //* 4.- MANDAR RESPUESTA AL CONTROLADOR
+        return data
     }
 }
 
