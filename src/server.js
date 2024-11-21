@@ -1,6 +1,7 @@
 //* Rquerir modulos
 import express from 'express'
-import router from './routers/tours_routes.js'
+import routerTour from './routers/tours_routes.js'
+import routerUser from './routers/user_routes.js'
 
 //* INICIALIZACIONES
 const app = express()
@@ -17,11 +18,15 @@ app.get('/',(req,res) =>{
     res.send('OK')
 })
 //* Rutas prara El Tour
-app.use('/api',router)
+app.use('/api',routerTour)
 
 //* Rutas para El User
 
+app.use('/api',routerUser)
+
 //* Rutas para el Booking
+
+
 
 //* Exportar instancia de la app
 export default app
