@@ -1,5 +1,6 @@
 import {Router} from 'express'
 import { createTourController, deleteTourController, findTourController, getAllToursController, updateTourController } from '../controllers/tour_controller.js'
+import { verifyToken } from '../middlewares/auth.js'
 
 
 const router = Router()
@@ -11,12 +12,12 @@ router.get('/tours',getAllToursController)
 router.get('/tours/:id',findTourController)
 
 //* Privada Admin - Empleado
-router.post('/tours',createTourController)
+router.post('/tours',verifyToken,createTourController)
 
 //* Privada Admin - Empleado//* Privada Admin - Empleado
-router.put('/tours/:id',updateTourController)
+router.put('/tours/:id' ,verifyToken,updateTourController)
 
 //* Privada Admin - Empleado
-router.delete('/tours/:id',deleteTourController)
+router.delete('/tours/:id' ,verifyToken,deleteTourController)
 
 export default router
