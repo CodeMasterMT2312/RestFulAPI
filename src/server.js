@@ -1,10 +1,28 @@
 //* Rquerir modulos
-import express from 'express'
-import routerTour from './routers/tours_routes.js'
-import routerUser from './routers/user_routes.js'
+import express from 'express';
+import cloudinary from 'cloudinary';
+import dotenv from 'dotenv';
+import fileUpload from 'express-fileupload';
+
+
+import routerTour from './routers/tours_routes.js';
+import routerUser from './routers/user_routes.js';
+
 
 //* INICIALIZACIONES
 const app = express()
+dotenv.config()
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET
+})
+
+app.use(fileUpload({
+    useTempFiles : true,
+    tempFileDir : './uploads'
+}));
 
 //* Variables
 app.set('port', process.env.PORT || 3000)

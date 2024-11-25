@@ -17,7 +17,7 @@ const registerController = async (req,res) => {
         const user = await UserModel.registerUserModel(userData)
         res.status(201).json(user)
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error.message)
     }
 }
 
@@ -31,7 +31,7 @@ const loginController = async (req,res) => {
         res.status(200).json({user,token})
 
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error.message)
     }
 }
 

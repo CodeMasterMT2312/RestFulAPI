@@ -5,13 +5,14 @@ const createToken = (userInfo) => {
 }
 
 const verifyToken = (req,res,next) => {
-    const authHeader = req.headers.autorization
+    const authHeader = req.headers.authorization;
 
-    if(!!authHeader || !!authHeader.startsWith('Bearer ')){
-        res.status(401).json({message:"Token no proporcionado"})
+
+    if(!authHeader || !authHeader.startsWith('Bearer ')){
+        res.status(401).json({message:"Token no proporcionado"});
     }
 
-    const token= authHeader.split(' ')[1]
+    const token= authHeader.split(' ')[1];
 
     jwt.verify(token,'secret_key',(err,decode)=>{
         if(err){

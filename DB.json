@@ -25,6 +25,20 @@
       "maxParticipantes": 8,
       "imagen": "https://i.ytimg.com/vi/OaOQ_uO2VNE/maxresdefault.jpg",
       "precio": 50
+    },
+    {
+      "id": "ca249f34-78f7-4c34-86be-e18246dc1f11",
+      "nombre": "Tour Venezuela",
+      "descripcion": "Tour por la capital",
+      "tipo": "Tour",
+      "ciudad": "Caracas",
+      "fechaInicio": "26/11/2024",
+      "fechaFin": "30/11/2024",
+      "duracion": "",
+      "maxParticipantes": "8",
+      "precio": "5000",
+      "imagen": "https://res.cloudinary.com/djrwzeah6/image/upload/v1732564032/tours/chpytagct02dgc9p2lsx.avif",
+      "public_id": "tours/chpytagct02dgc9p2lsx"
     }
   ],
   "users": [
@@ -100,6 +114,20 @@
         2,
         3
       ]
+    },
+    {
+      "id": "879a0234-01a7-4000-88d4-0c50d5e7eb15",
+      "password": "$2b$10$VklbMQBgGnqLv8vAnC8HTOwHDCHGKTki9Pdlt6wuCJacd1X8Kkwqe",
+      "username": "prueba",
+      "email": "prueba@example.com",
+      "fullname": "prueba prueba"
+    },
+    {
+      "id": "8b55db05-f9cf-40ff-8bc2-30019ed10d6a",
+      "password": "$2b$10$MtDuYiz5Bn2N2fhi1Lg4quLmmScUGMo31R20ddfxOv1TUGKkV3tFy",
+      "username": "prueba",
+      "email": "prueba@example.com",
+      "fullname": "prueba prueba"
     }
   ]
 }

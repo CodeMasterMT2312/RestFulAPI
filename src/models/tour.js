@@ -4,7 +4,7 @@
 const tourModel = {
     async getAllToursModel(){
         try {
-            const peticion = await fetch('http://localhost:4000/tours')
+            const peticion = await fetch(process.env.URL_BDD_TOURS)
             const tours = await peticion.json()
             return tours
         } catch (error) {
@@ -14,7 +14,7 @@ const tourModel = {
 
     async createTourModel(newTour){
         //* 1.- CONEXION A BDD
-        const url = "http://localhost:4000/tours"
+        const url = process.env.URL_BDD_TOURS
         //* 2.- ENVIAR DATA A LA BDD
         const peticion = await fetch(url, {
             method: 'POST',
@@ -29,7 +29,7 @@ const tourModel = {
 
     async updateTourModel(tourId,updatedTour){
         //* 1.- CONEXION A BDD
-        const url = `http://localhost:4000/tours/${tourId}`
+        const url = `${process.env.URL_BDD_TOURS}/${tourId}`
         //* 2.- ENVIAR DATA A LA BDD
         const peticion = await fetch(url, {
             method: 'PUT',
@@ -44,7 +44,7 @@ const tourModel = {
 
     async deleteTourModel(tourId){
         //* 1.- CONEXION A BDD
-        const url = `http://localhost:4000/tours/${tourId}`
+        const url = `${process.env.URL_BDD_TOURS}/${tourId}`
         //* 2.- ENVIAR DATA A LA BDD
         const peticion = await fetch(url, {
             method: 'DELETE',
@@ -57,7 +57,7 @@ const tourModel = {
 
     async findTourModel(tourId){
         //* 1.- CONEXION A BDD
-        const url = `http://localhost:4000/tours/${tourId}`
+        const url = `${process.env.URL_BDD_TOURS}/${tourId}`
         //* 2.- ENVIAR DATA A LA BDD
         const peticion = await fetch(url)
         //* 3.- OBTENER RESPUESTA A LA BDD
