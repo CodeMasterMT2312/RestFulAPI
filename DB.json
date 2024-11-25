@@ -2,33 +2,29 @@
   "tours": [
     {
       "id": "1",
-      "name": "Tour a la Montaña",
-      "price": 150,
-      "status": "active"
+      "nombre": "Tour por las Iglesias",
+      "descripcion": "Explora las iglesias históricas más emblemáticas",
+      "tipo": "Exploración",
+      "ciudad": "Cuenca",
+      "fechaInicio": "10/04/2024",
+      "fechaFin": "12/04/2024",
+      "duracion": "2 días",
+      "maxParticipantes": 5,
+      "imagen": "https://i.pinimg.com/736x/c0/c9/f2/c0c9f2827d064ccf0849e9d624b01411.jpg",
+      "precio": 50
     },
     {
       "id": "2",
-      "name": "Tour Cultural por la Ciudad",
-      "price": 200,
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Tour de Aventura en la Selva",
-      "price": 250,
-      "status": "active"
-    },
-    {
-      "id": "c4ee42d9-4f6c-4145-ba19-dbe5380841b0",
-      "name": "Tour Cuenca",
-      "price": 100,
-      "status": "active"
-    },
-    {
-      "id": "69309c2b-7331-492d-8cfb-cd21a2342678",
-      "name": "Tour Galapagos",
-      "price": 560,
-      "status": "active"
+      "nombre": "Tour Quilotoa",
+      "descripcion": "Explora la maravillosa laguna del Quilotoa",
+      "tipo": "Volcán",
+      "ciudad": "Latacunga",
+      "fechaInicio": "10/04/2024",
+      "fechaFin": "12/04/2024",
+      "duracion": "2 días",
+      "maxParticipantes": 8,
+      "imagen": "https://i.ytimg.com/vi/OaOQ_uO2VNE/maxresdefault.jpg",
+      "precio": 50
     }
   ],
   "users": [
