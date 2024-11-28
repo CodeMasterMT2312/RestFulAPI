@@ -1,5 +1,8 @@
 
 //* Obtener Tours de la Base de datos
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const tourModel = {
     async getAllToursModel(){
@@ -29,7 +32,7 @@ const tourModel = {
 
     async updateTourModel(tourId,updatedTour){
         //* 1.- CONEXION A BDD
-        const url = `${process.env.URL_BDD_TOURS}/${tourId}`
+        const url = `${process.env.URL_BDD_TOURS}${tourId}`
         //* 2.- ENVIAR DATA A LA BDD
         const peticion = await fetch(url, {
             method: 'PUT',
@@ -44,7 +47,7 @@ const tourModel = {
 
     async deleteTourModel(tourId){
         //* 1.- CONEXION A BDD
-        const url = `${process.env.URL_BDD_TOURS}/${tourId}`
+        const url = `${process.env.URL_BDD_TOURS}${tourId}`
         //* 2.- ENVIAR DATA A LA BDD
         const peticion = await fetch(url, {
             method: 'DELETE',
@@ -57,7 +60,7 @@ const tourModel = {
 
     async findTourModel(tourId){
         //* 1.- CONEXION A BDD
-        const url = `${process.env.URL_BDD_TOURS}/${tourId}`
+        const url = `${process.env.URL_BDD_TOURS}${tourId}`
         //* 2.- ENVIAR DATA A LA BDD
         const peticion = await fetch(url)
         //* 3.- OBTENER RESPUESTA A LA BDD
