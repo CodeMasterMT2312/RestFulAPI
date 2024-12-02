@@ -44,7 +44,20 @@ const tourModel = {
         //* 4.- MANDAR RESPUESTA AL CONTROLADOR
         return data
     },
-
+    async updateTourModelPatch(tourId,updatedTour){
+        //* 1.- CONEXION A BDD
+        const url = `${process.env.URL_BDD_TOURS}${tourId}`
+        //* 2.- ENVIAR DATA A LA BDD
+        const peticion = await fetch(url, {
+            method: 'PATCH',
+            body:JSON.stringify(updatedTour),
+            headers: {"Content-Type":"application/json"}
+        })
+        //* 3.- OBTENER RESPUESTA A LA BDD
+        const data = await peticion.json()
+        //* 4.- MANDAR RESPUESTA AL CONTROLADOR
+        return data
+    },
     async deleteTourModel(tourId){
         //* 1.- CONEXION A BDD
         const url = `${process.env.URL_BDD_TOURS}${tourId}`

@@ -46,6 +46,17 @@ const updateTourController= async (req,res) =>{
     }
 }
 
+const updateTourControllerPatch= async (req,res) =>{
+    const {id}=req.params
+
+    try {
+        const tour = await tourModel.updateTourModelPatch(id,req.body)
+        res.status(200).json(tour)
+    } catch (error) {
+        res.status(500).json(error.message)
+    }
+}
+
 const deleteTourController = async (req, res) => {
     const { id } = req.params;
     try {
@@ -89,5 +100,6 @@ export{
     createTourController,
     updateTourController,
     deleteTourController,
-    findTourController
+    findTourController,
+    updateTourControllerPatch
 }

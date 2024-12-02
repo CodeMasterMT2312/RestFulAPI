@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import { createTourController, deleteTourController, findTourController, getAllToursController, updateTourController } from '../controllers/tour_controller.js'
+import { createTourController, deleteTourController, findTourController, getAllToursController, updateTourController, updateTourControllerPatch } from '../controllers/tour_controller.js'
 import { verifyToken } from '../middlewares/auth.js'
 
 
@@ -16,6 +16,9 @@ router.post('/tours',verifyToken,createTourController)
 
 //* Privada Admin - Empleado//* Privada Admin - Empleado
 router.put('/tours/:id' ,verifyToken,updateTourController)
+
+//* Privada Admin - Empleado//* Privada Admin - Empleado
+router.patch('/tours/:id',verifyToken,updateTourControllerPatch)
 
 //* Privada Admin - Empleado
 router.delete('/tours/:id' ,verifyToken,deleteTourController)
